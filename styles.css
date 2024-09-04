@@ -1,0 +1,48 @@
+.app {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+    max-height: 50%;
+    max-width: 40%;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-block: 30%;
+    
+
+}
+.text{
+    display: flex;
+}
+#content{
+    margin-right: 20%;
+}
+#progress{
+    padding-left: 20%;
+    margin: 5%;
+}
+.start{
+    height: 10%;
+    width: 30%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: yellow;
+    transition: background-color 0.3s ease;
+}
+.start:hover{
+    background-color: lightgreen;
+}
+#button{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+#question-amount{
+    color: green;
+    border: 2px solid black;
+}
+#head{
+    display: flex;
+}
