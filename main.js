@@ -1,3 +1,6 @@
+// TODO: Somehow most of the questions are being skipped by pressing the button & the button
+// doesn't change to "Next questions" & No alert after clicking answers
+
 let questionAmount = document.getElementById("question-amount").innerHTML
 let questionHeader = document.getElementById("header")
 let answers = document.getElementById("answers")
@@ -142,6 +145,32 @@ function onButtonChange() {
     const questionObj = questions[counter]
     document.getElementById("header").textContent = header[counter]
 
+    answers.innerHTML = ""
+
     document.getElementById("questions").textContent = questionObj.question
+
+    questionObj.answers.forEach((answer, index) => {
+      const li = document.createElement("li")
+      li.textContent = answer
+      li.dataset.index = index
+      li.onclick = () => checkAnswer(index, questionObj,correctAnswer)
+      answers.appendChild(li)
+    }
+  )
+  
+
+  function checkAnswer(selectedIndex, correctIndex){
+    if(selectedIndex === correctIndex){
+      alert("Correct!")
+    } else {
+      alert("Wrong! Try again.")
+    }
   }
-}
+  document.getElementById("start").addEventListener("click", () => {
+    if(counter === -1) {
+      document.getElementById("start").textContent = "Next question"
+    }
+
+    onButtonChange()
+  })
+}}
